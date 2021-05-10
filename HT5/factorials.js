@@ -26,18 +26,13 @@ function getFactorial(number) {
 }
 
 function getSumOfMidFactorials(first, second, step) {
-	// if there are no middle numbers, we will return 0 (the sum of nothing)
-	if (first + step > second) {
-		return 0
-	}
 	// we don't wanna count factorials each time, because it is quite expensive
 	// I wanna use logic that 7! = 7 * 6 * 5!, so if I know amount of 5!, I will
 	// not count it again, I will reuse the previous count results
-	let factorialIndex = first + step
-	let middleFactorial = getFactorial(factorialIndex)
+	let middleFactorial = getFactorial(first)
 	let sum = middleFactorial
 	
-	for (factorialIndex; factorialIndex + step < second; factorialIndex = factorialIndex + step){
+	for (let factorialIndex = first; factorialIndex + step <= second; factorialIndex = factorialIndex + step){
 		for (let i = factorialIndex + step; i > factorialIndex; i--) {
 			middleFactorial *= i
 		}

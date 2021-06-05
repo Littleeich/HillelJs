@@ -1,0 +1,71 @@
+.continentsLine {
+  display: flex;
+}
+
+.continentsLine div {
+  width: 100px;
+  height: 50px;
+}
+
+.zeroBlock {
+  border: solid 1px transparent;
+}
+
+.continent .circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 10px auto;
+}
+
+.continentsLine .continent {
+  border: solid 1px;
+  border-color: #05BCC6;
+  background: #A4FAFF;
+}
+
+.sportLine > div {
+  min-height: 100px;
+  width: 100px;
+  border: solid 1px;
+  border-color: #05BCC6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.sportLine {
+  display: flex;
+}
+
+.sportImg {
+  font-size: 40px;
+  background: #A4FAFF;
+}
+
+.sportLine .winBlocks {
+  display: flex;
+  flex-direction: column;
+}
+
+.gold, .silver, .bronze {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gold {
+  background: gold;
+}
+
+.silver {
+  background: silver;
+}
+
+.bronze {
+  background: orange;
+}

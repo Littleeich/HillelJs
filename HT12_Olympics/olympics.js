@@ -48,8 +48,7 @@ const winners = [
 	['handball','bronze','de'],
 ];
 
-const olympic = ['blue','black','red','yellow','green'];
-const olympicNames = ['Europe', 'Africa', 'The Americas', 'Asia','Oceania'];
+const olympic = [['blue', 'Europe'], ['black' , 'Africa'], ['red', 'The Americas'], ['yellow', 'Asia'], ['green', 'Oceania']];
 
 const medals = [
 	['🥇','gold'],
@@ -95,7 +94,7 @@ document.write('<div class="continentsLine"><div class="zeroBlock"></div>')
 for (let i = 0; i < olympic.length; i++) {
   document.write(`
   <div class="continent">
-  <div class="circle" style="background:${olympic[i]}"></div>
+  <div class="circle" style="background:${olympic[i][0]}"></div>
   </div>`)
 }
 document.write('</div>')
@@ -126,7 +125,7 @@ function findContinent(country) {
       break;
     }
   }
-  return olympicNames.indexOf(continentName)
+  return getIndexOfContinent(continentName)
 }
 
 function findFlag(country) {
@@ -153,4 +152,12 @@ function getMedal(medal) {
       return pair[0]
     }
   }
+}
+
+function getIndexOfContinent(conName) {
+	for(let i=0; i<olympic.length; i++) {
+		if(olympic[i][1] == conName) {
+			return i
+		}
+	}
 }

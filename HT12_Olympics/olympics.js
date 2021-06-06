@@ -137,13 +137,9 @@ function findFlag(country) {
 }
 
 function getWinners(sport) {
-  let tempArr = []
-  for(let win of winners) {
-    if(win[0] == sport) {
-      tempArr.push(win)
-    }
-  }
-  return tempArr;
+  return winners.filter( function(el) {
+	  return el[0] == sport
+  })
 }
 
 function getMedal(medal) {

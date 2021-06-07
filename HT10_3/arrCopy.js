@@ -29,5 +29,5 @@ console.log(arrCopy(c))
 console.log(arrCopy())
 console.log(arrCopy('a'))
 console.log(arrCopy(a, function(value){ return value*10; }))
-console.log(arrCopy(c, function(value){ return value*10; }))
+console.log(arrCopy(c, a))
 		

@@ -36,4 +36,4 @@ let trArr = filteredUsers.map( function (row) {
 
 
 
-document.write(`<table>${trArr.join('')}</table><foot>Final summ: ${finalSumm}</foot>`)
+document.write(`<table>${trArr.join('')}</table><tfoot>Final summ: ${finalSumm}</tfoot>`)

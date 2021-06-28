@@ -104,9 +104,9 @@ function renderTable(rArr) {
 	let table = [`
 	<table>
 		<tr>
-			<td><strong>Image<strong></td>
-			<td><strong>Name<strong></td>
-			<td><strong>Price<strong></td>
+			<td><strong>Image</strong></td>
+			<td><strong>Name</strong></td>
+			<td><strong>Price</strong></td>
 		</tr>
 	`]
 	for(let product of rArr) {

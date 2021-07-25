@@ -105,13 +105,19 @@ let serverResponce = {
 
 const ROLES = serverResponce.roles
 
+const USER_GENERATOR = {
+	student: user => new Student(user),
+	lector: user => new Lector(user),
+	admin: user => new Admin(user)
+}
+
 class User {
-    constructor (name, age, img, role, courses = null) {
-        this.name = name
-        this.age = age
-        this.img = img
-        this.role = role
-        this.courses = courses
+    constructor (obj) {
+        this.name = obj.name
+        this.age = obj.age
+        this.img = obj.img
+        this.role = obj.role
+        this.courses = obj.courses
     }
 
     generateUserInfo() {
@@ -157,8 +163,8 @@ class User {
 }
 
 class Student extends User {
-    constructor(name, age, img, courses = null) {
-        super(name, age, img, 'student', courses)
+    constructor(obj) {
+        super(obj)
     }
 
     generateCoursesInfo() {
@@ -181,8 +187,8 @@ class Student extends User {
 }
 
 class Lector extends User {
-    constructor(name, age, img, courses = null) {
-        super(name, age, img, 'lector', courses)
+    constructor(obj) {
+        super(obj)
     }
 
     generateCoursesInfo() {
@@ -207,8 +213,8 @@ class Lector extends User {
 }
 
 class Admin extends User {
-    constructor(name, age, img, courses = null) {
-        super(name, age, img, 'admin', courses)
+    constructor(obj) {
+        super(obj)
     }
 
     generateCoursesInfo() {
@@ -233,16 +239,7 @@ class Admin extends User {
 }
 
 function renderNeededUser(obj) {
-    let user
-    if(obj.role === 'student')
-        user = new Student(obj.name, obj.age, obj.img, obj.courses)
-    else if (obj.role === 'lector')
-        user = new Lector(obj.name, obj.age, obj.img, obj.courses)
-    else if (obj.role === 'admin')
-        user = new Admin(obj.name, obj.age, obj.img, obj.courses)
-    else
-        alert('Wrong user! Everything is broken! You are fired!')
-    
+	let user = USER_GENERATOR[obj.role] ? USER_GENERATOR[obj.role](obj) : new User(obj)
     return user.renderUser()
 }
 

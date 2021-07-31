@@ -38,11 +38,9 @@ document.onkeydown = e => {
 
 function ctrlElement(elem) {
     elem.classList.add('ctrl')
-    // elem.style.top = elem.style.top ? moveElement(elem, 'top', 40) : `${window.innerHeight / 2 - elem.clientHeight/2 + 40}px`
-        setTimeout( () => {
-            elem.classList.remove('ctrl')
-            // elem.style.top = moveElement(elem, 'top', -40)
-        }, 1000)
+    setTimeout( () => {
+        elem.classList.remove('ctrl')
+    }, 1000)
 }
 
 function moveElement(elem, direction, step) {

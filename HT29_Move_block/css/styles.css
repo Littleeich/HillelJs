@@ -16,12 +16,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: width 1s, height 1s, top 0.5s;
+  transition: top 1s, left 1s, transform 1s ;
 }
 
 .block.ctrl{
-  width: 125px;
-  height: 60px;
+  transform: scale(1.25, 0.6) translate(0px, 30px);
 }
 
 .boom{

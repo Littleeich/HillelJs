@@ -1,0 +1,50 @@
+.menuHeader, .mainData{
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menuHeader li {
+  padding: 5px 40px;
+  border: 1px solid white;
+  text-transform: uppercase;
+  color: red;
+  background-color: pink;
+  font-weight: bold;
+}
+
+.menuHeader li:hover {
+  color: white;
+  background-color: green;
+  cursor: pointer;
+}
+
+.menuHeader li.active {
+  color: white;
+  background-color: tomato;
+  cursor: default;
+}
+
+.menuHeader li:first-of-type {
+  border-radius: 30% 0 0 30%;
+}
+
+.menuHeader li:last-of-type {
+  border-radius: 0 30% 30% 0;
+}
+
+.mainData{
+  flex-direction: column;
+  max-width: 700px;
+  margin: auto;
+}
+
+.sectionHeader{
+  margin: 30px 0;
+  font: bold 20px/24px Arial, sans-serif;
+}
+
+.sectionText{
+  margin-bottom: 40px;
+  font: 18px/20px sans-serif;
+}

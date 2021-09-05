@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form class= "form__joke" action="" id="formJoke">
+        <section>
+            <label for="randomCategory">
+                Random
+                <input type="radio" value="random" name="jokeType" id="randomCategory" checked>
+            </label>
+        </section>
+
+        <section>
+            <label for="categoriesCategory">
+                Categories
+                <input type="radio" value="categories" name="jokeType" id="categoriesCategory">
+            </label>
+            <ul class="categories__list" id="categoriesList">
+            </ul>
+        </section>
+
+        <section>
+            <label for="categoriesSearch">
+                Search
+                <input type="radio" value="search" name="jokeType" id="searchCategory">
+            </label>
+            <input type="text" id="searchJoke">
+        </section>
+
+        <button>Get joke</button>
+    </form>
+
+    <div class="joke__container" id="jokeContainer">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

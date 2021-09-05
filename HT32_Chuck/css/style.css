@@ -1,0 +1,25 @@
+.form__joke, .joke__block{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.form__joke section, .joke__block > *, .joke__block{
+  margin-bottom: 20px;
+}
+
+.joke__container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.categories__list {
+  display: none;
+}
+
+.categories__list.show {
+  display: block;
+}

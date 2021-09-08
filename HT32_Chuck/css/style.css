@@ -1,13 +1,29 @@
-.form__joke, .joke__block{
+.form__joke, .joke__block, .joke__favourites{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   border: 1px solid black;
   padding: 10px;
+  font: 20px/24px Arial; 
+}
+
+.joke__block {
+  border-radius: 10px;
+  box-shadow: 5px 10px 15px grey;
+  display: flex;
+  align-items: stretch;
+}
+
+.joke__block:first-of-type {
+  margin-top: 10px;
 }
 
 .form__joke section, .joke__block > *, .joke__block{
   margin-bottom: 20px;
+}
+
+.joke__block > *:last-of-type {
+  margin-bottom: 0;
 }
 
 .joke__container {
@@ -16,10 +32,76 @@
   flex-direction: column;
 }
 
-.categories__list {
+.categories__list, .joke__search {
   display: none;
 }
 
 .categories__list.show {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categories__list li {
+  margin-right: 20px;
+}
+
+.joke__search.show {
   display: block;
+  width: 500px;
+  height: 30px;
+  margin-top: 5px;
+  border-radius: 5px;
+  font: 20px/28px Arial;
+}
+
+.pageWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.pageWrapper > div {
+  margin: 20px;
+  flex: calc(45%) 1 1;
+}
+
+.joke__favourites {
+  margin-bottom: 20px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+label[for^="joke"].checked {
+  color: red;
+}
+
+.joke__block--date {
+  font-size: 14px;
+  color: grey;
+}
+
+.joke__favourites {
+  align-items: stretch;
+}
+
+button {
+  color:indigo;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: lawngreen;
+  border-radius: 10px;
+}
+
+.joke__block--footer {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  margin-top: 10px;
+}
+
+.joke__block--category {
+  text-transform: uppercase;
+  color:lightseagreen;
+  font-size: 20px;
 }

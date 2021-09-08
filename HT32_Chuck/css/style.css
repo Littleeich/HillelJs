@@ -68,7 +68,7 @@
   margin-bottom: 20px;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"], input[name="categoryList"] {
   display: none;
 }
 
@@ -104,4 +104,14 @@ button {
   text-transform: uppercase;
   color:lightseagreen;
   font-size: 20px;
+}
+
+label[for^="category"].checked {
+  background-color: lightseagreen;
+  color: blue;
+  border-radius: 8%;
+}
+
+label[for^="category"] {
+  padding: 2px 5px;
 }

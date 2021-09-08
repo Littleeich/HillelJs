@@ -37,9 +37,22 @@ class JokesPage {
                 let checkedCategory = this.categoriesList.querySelector(`input[name="categoryList"]:checked`),
                     checkedCategoryIndex = checkedCategory.dataset.index
         
+                    this.categoriesList.querySelectorAll('input').forEach ( input => {
+                        input.addEventListener('click', () => {
+                            this.categoriesList.querySelectorAll('label').forEach ( label => {
+                                label.classList.remove('checked')
+                            })
+                            let label = input.closest('label')
+                            label.classList.add('checked')
+                        })
+                    })
+
                     if(checkedCategoryIndex !== 0) {
                         checkedCategory.checked = false
-                        this.categoriesList.querySelector(`input[name="categoryList"][data-index="0"]`).checked = true
+                        checkedCategory.closest('label').classList.remove('checked')
+                        let first = this.categoriesList.querySelector(`input[name="categoryList"][data-index="0"]`)
+                        first.checked = true
+                        first.closest('label').classList.add('checked')
                     }
             })
         })
@@ -69,7 +82,6 @@ class JokesPage {
         xhr.addEventListener('readystatechange', () => {
             if(xhr.readyState === 4 && xhr.status === 200) {
                 let joke = JSON.parse(xhr.responseText)
-                console.log(joke)
                 this.jokeContainer.innerHTML = ''
                 if(joke.result) {
                     joke.result.length ? joke.result.forEach( jokeEl => this.renderJoke(jokeEl, true)) : this.jokeContainer.innerHTML = ''
@@ -146,7 +158,7 @@ class JokesPage {
         let renderLI = data.map( (cat, index) => {
             return `
             <li>
-                <label for="categoryList${cat}">
+                <label for="categoryList${cat}" class="${!index ? 'checked' : ''}">
                 ${cat}
                     <input type="radio" value="${cat}" name="categoryList" id="categoryList${cat}" ${!index ? 'checked' : ''} data-index="${index}">
                 </label>
